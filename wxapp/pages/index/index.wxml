@@ -1,0 +1,24 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+    <view class="title_view">
+        <view class="open_tag">查看星座运势</view>
+        <view class="content_view">
+            头像绘制超过使用
+            <text>90</text> 次
+        </view>
+    </view>
+    <view class="funtion_list">
+        <view class="funtion_item" wx:for="{{funtionList}}" wx:key="index">
+            <image class="item_icon" src="{{item.icon}}"></image>
+            <view class="item_info">
+                <text>{{item.title}}</text>
+                <progress class="item_progress" border-radius="4" stroke-width="8" activeColor="#ff7116" duration="15" percent="80" active />
+                <view class="item_open">
+                    <view class="item_description">{{item.description}}</view>
+                    <view class="item_bnt has_open" wx:if="{{item.hasOpen}}">开始制作</view>
+                    <view class="item_bnt" wx:if="{{!item.hasOpen}}">暂未开放</view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>
